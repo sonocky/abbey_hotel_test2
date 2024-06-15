@@ -1,0 +1,341 @@
+body {
+    font-family: 'Noto Serif JP', serif;
+    margin: 0;
+    padding: 0;
+    color: #457a96;
+    text-align: center;
+    background-color: #edf7fc;
+}
+
+header {
+    background-color: #edf7fc;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header-buttons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+.reservation-btn {
+    background-color: #c2b953;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.menu-btn {
+    cursor: pointer;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-btn__burger {
+    width: 30px;
+    height: 3px;
+    background: #c2b953;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #c2b953;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    top: -10px;
+}
+
+.menu-btn__burger::after {
+    top: 10px;
+}
+
+.menu-btn.open .menu-btn__burger {
+    transform: rotate(45deg);
+    background: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(180deg);
+    top: 0;
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+.nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background-color: #edf7fc;
+    border: 1px solid #c2b953;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    z-index: 1000;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.nav-menu li {
+    width: 100%;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 10px;
+    color: #457a96;
+    text-decoration: none;
+}
+
+.nav-menu a:hover {
+    background-color: #c2b953;
+    color: white;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoom 20s infinite;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.hero-text img {
+    height: 100px;
+}
+
+.description, .includes, .notes {
+    padding: 20px;
+    background-color: #edf7fc;
+    color: #457a96;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.text-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.description img, .includes img {
+    flex: 1;
+    max-width: 50%;
+    height: auto;
+}
+
+.notes {
+    flex-direction: column;
+}
+
+.news-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.news-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    width: 30%;
+}
+
+.news-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.reservation-link {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.reservation-link button {
+    background-color: #c2b953;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.contact {
+    padding: 20px;
+    background-color: #3e5ea3;
+    color: white;
+}
+
+footer {
+    padding: 20px;
+    background-color: #3e5ea3;
+    color: white;
+}
+
+h2 {
+    display: inline-block;
+    border-bottom: 2px solid #457a96;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h2.no-underline {
+    border-bottom: none;
+}
+
+/* スマートフォン用のスタイル */
+@media (max-width: 768px) {
+    .hero {
+        height: 300px;
+    }
+    
+    .hero h1 {
+        font-size: 24px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .reservation-btn {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    
+    .header-buttons {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        width: auto;
+    }
+    
+    .menu-btn {
+        margin-left: 10px;
+    }
+    
+    .nav-menu {
+        width: 50%;
+        right: 0;
+        top: 60px;
+    }
+    
+    .nav-menu a {
+        padding: 15px;
+    }
+    
+    .description, .plan, .includes, .notes {
+        flex-direction: column;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .includes img, .description img, .news-item img {
+        width: 80%;
+        margin: 10px 0;
+    }
+    
+    .contact input, .contact textarea {
+        width: 90%;
+    }
+}
