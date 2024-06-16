@@ -201,6 +201,16 @@ header {
     height: 100px;
 }
 
+.hero h1 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.hero p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
 .description, .includes, .notes {
     padding: 20px;
     background-color: #edf7fc;
@@ -231,6 +241,7 @@ header {
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .news-item {
@@ -286,16 +297,20 @@ h2.no-underline {
 
 /* スマートフォン用のスタイル */
 @media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+
     .hero {
         height: 300px;
     }
     
     .hero h1 {
-        font-size: 24px;
+        font-size: 1.5em;
     }
     
     .hero p {
-        font-size: 16px;
+        font-size: 0.9em;
     }
     
     .reservation-btn {
@@ -303,39 +318,26 @@ h2.no-underline {
         font-size: 14px;
     }
     
-    .header-buttons {
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
-        width: auto;
-    }
-    
-    .menu-btn {
-        margin-left: 10px;
-    }
-    
     .nav-menu {
-        width: 50%;
+        width: 100%;
         right: 0;
-        top: 60px;
+        top: 50px;
     }
     
-    .nav-menu a {
-        padding: 15px;
+    .nav-menu ul {
+        text-align: center;
     }
-    
-    .description, .plan, .includes, .notes {
+
+    .description, .includes, .notes {
         flex-direction: column;
-        padding-left: 5%;
-        padding-right: 5%;
+        padding: 10px;
     }
-    
-    .includes img, .description img, .news-item img {
+
+    .description img, .includes img {
+        max-width: 100%;
+    }
+
+    .news-item {
         width: 80%;
-        margin: 10px 0;
-    }
-    
-    .contact input, .contact textarea {
-        width: 90%;
     }
 }
