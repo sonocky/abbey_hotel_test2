@@ -228,8 +228,10 @@ header {
 
 .description img, .includes img {
     flex: 1;
-    max-width: 50%;
+    width: 100%;
     height: auto;
+    max-width: 500px;
+    object-fit: cover;
 }
 
 .notes {
@@ -335,6 +337,7 @@ h2.no-underline {
 
     .description img, .includes img {
         max-width: 100%;
+        width: auto;
     }
 
     .news-item {
